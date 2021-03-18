@@ -19,7 +19,8 @@ export class RegisterPage implements OnInit {
     try {
       const user = await this.authSvc.register(email.value, password.value);
       if (user) {
-        
+        const isVerified = this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
       }
     } catch (error) {
       console.log('Error', error);
