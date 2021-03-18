@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gcond-f44b4": {
+      "hosting": {
+        "app": [
+          "gcond-f44b4"
+        ]
+      }
+    }
+  }
+}
