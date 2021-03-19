@@ -10,18 +10,18 @@ import { switchMap } from "rxjs/operators";
   providedIn: 'root'
 })
 export class AuthService {
-  user$:Observable<User>;
+  public user$:Observable<User>;
 
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.user$ = this.afAuth.authState.pipe(
-      switchMap((user)=>{
-        if (user){
+      switchMap((user) => {
+        if (user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         }
         return of(null);
       })
     );
-   }
+  }
   
    async sendVerifcationEmail(): Promise<void> {
     try {
@@ -42,7 +42,6 @@ export class AuthService {
     }
   }
   async sendVerificationEmail():Promise<void>{
-
     try {
       return (await this.afAuth.currentUser).sendEmailVerification();
     } catch (error) {
@@ -58,7 +57,7 @@ export class AuthService {
   }
   async login(email: string, password: string): Promise<User>{
     try {
-      const { user }= await this.afAuth.signInWithEmailAndPassword(email, password);
+      const { user } = await this.afAuth.signInWithEmailAndPassword(email, password);
       this.updateUserdata(user);
       return user;
 
@@ -66,6 +65,7 @@ export class AuthService {
       console.log('error->',error);
     }
   }
+
   async register(email: string, password: string): Promise<User> {
 
     try {

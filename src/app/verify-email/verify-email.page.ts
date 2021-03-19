@@ -3,6 +3,7 @@ import { User } from './../shared/user.interface';
 
 import { Observable } from 'rxjs';
 import { AuthService } from '../service/auth.service';
+
 @Component({
   selector: 'app-verify-email',
   templateUrl: './verify-email.page.html',
@@ -15,7 +16,7 @@ export class VerifyEmailPage {
 
   async onSendEmail(): Promise<void> {
     try {
-      await this.authSvc.sendVerifcationEmail();
+      await this.authSvc.sendVerificationEmail();
     } catch (error) {
       console.log('Error->', error);
     }
