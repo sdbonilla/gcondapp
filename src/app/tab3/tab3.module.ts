@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 
 import { Tab3Page } from './tab3.page';
+import { AdminPageModule } from '../admin/admin.module';
 import { LoginPageModule } from '../login/login.module';
 
 @NgModule({

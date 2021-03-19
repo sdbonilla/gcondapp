@@ -48,7 +48,7 @@ export class AuthService {
       console.log('Error->',error)
     }
   }
-  async resetPassw(email: string):Promise<void>{
+  async resetPassword(email: string):Promise<void>{
     try {
       return this.afAuth.sendPasswordResetEmail(email)
     } catch (error) {

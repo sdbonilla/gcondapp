@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin-routing.module').then( m => m.AdminPageRoutingModule)
+    loadChildren: () => import('./admin/admin-routing.module').then( m => m.AdminPageRoutingModule),
+    canActivate: [AuthGuard],
+
   },
   {
     path: 'verify-email',

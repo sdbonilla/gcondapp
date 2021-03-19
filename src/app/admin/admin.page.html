@@ -1,9 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>admin</ion-title>
+    <ion-button type="submit" (click)="onLogout">logout</ion-button>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<!--*ngIf="user$ | async as user", => {{user.displayName}}-->
+<ion-content >
+<p>Bienvenido Usuario</p>
 </ion-content>
