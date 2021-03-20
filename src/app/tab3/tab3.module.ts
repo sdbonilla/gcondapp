@@ -16,7 +16,8 @@ import { LoginPageModule } from '../login/login.module';
     FormsModule,
     IonicModule,
     Tab3PageRoutingModule,
-    LoginPageModule
+    LoginPageModule,
+    AdminPageModule
   ],
   declarations: [Tab3Page]
 })

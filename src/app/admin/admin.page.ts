@@ -11,9 +11,9 @@ export class AdminPage implements OnInit {
 
   constructor(private authSvc: AuthService, private router: Router) { }
 
-  async onLogout() {
+  onLogout() {
     try {
-      this.authSvc.logout;
+      this.authSvc.logout();
     } catch (error) {
       console.log('Error->', error);
     }

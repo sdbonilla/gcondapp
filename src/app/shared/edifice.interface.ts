@@ -1,4 +1,4 @@
-export interface Edifice {
+export interface EdificeI {
     Torre: number;
     Edifice: number;
     eid: number;

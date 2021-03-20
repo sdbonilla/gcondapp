@@ -25,6 +25,14 @@ const routes: Routes = [
     path: 'verify-email',
     loadChildren: () => import('./verify-email/verify-email-routing.module').then( m => m.VerifyEmailPageRoutingModule)
   },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password-routing.module').then( m => m.ForgotPasswordPageRoutingModule)
+  },
+  {
+    path: 'gestiontorres',
+    loadChildren: () => import('./gestiontorres/gestiontorres.module').then( m => m.GestiontorresPageModule)
+  },
 ];
 
 @NgModule({
