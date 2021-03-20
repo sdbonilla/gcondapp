@@ -33,6 +33,11 @@ const routes: Routes = [
     path: 'gestiontorres',
     loadChildren: () => import('./gestiontorres/gestiontorres.module').then( m => m.GestiontorresPageModule)
   },
+  {
+    path: 'tdetails/:id',
+    loadChildren: () => import('./torre-details/torre-details.module').then( m => m.TorreDetailsPageModule)
+  },
+  {path:'details', loadChildren:'./torre-details/torre-details.module'}
 ];
 
 @NgModule({

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
 import { Tab2Page } from './tab2.page';
+import { GestiontorresPageModule } from '../gestiontorres/gestiontorres.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    GestiontorresPageModule
   ],
   declarations: [Tab2Page]
 })

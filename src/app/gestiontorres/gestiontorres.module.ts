@@ -15,6 +15,7 @@ import { GestiontorresPage } from './gestiontorres.page';
     IonicModule,
     GestiontorresPageRoutingModule
   ],
-  declarations: [GestiontorresPage]
+  declarations: [GestiontorresPage],
+  exports: [GestiontorresPage]
 })
 export class GestiontorresPageModule {}

@@ -1,6 +1,4 @@
 export interface EdificeI {
-    Torre: number;
-    Edifice: number;
-    eid: number;
-    propiet: string;
+    ntorre: string;
+    id: string;
 }

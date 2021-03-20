@@ -13,7 +13,7 @@ export class AdminPage implements OnInit {
 
   onLogout() {
     try {
-      this.authSvc.logout();
+      this.authSvc.logout;
     } catch (error) {
       console.log('Error->', error);
     }

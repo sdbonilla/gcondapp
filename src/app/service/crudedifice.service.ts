@@ -36,6 +36,15 @@ export class CrudedificeService {
 
 
   updateTorre(torre:EdificeI, id:string){
-    return this.cruded.doc(id).update(torre)
+    return this.cruded.doc(id).update(torre);
+  }
+
+  addTorre(torre:EdificeI){
+    return this.cruded.add(torre);
+  }
+
+
+  removeTorre(id:string){
+    return this.cruded.doc(id).delete(); 
   }
 }
