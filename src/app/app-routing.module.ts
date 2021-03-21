@@ -37,7 +37,15 @@ const routes: Routes = [
     path: 'tdetails/:id',
     loadChildren: () => import('./torre-details/torre-details.module').then( m => m.TorreDetailsPageModule)
   },
-  {path:'details', loadChildren:'./torre-details/torre-details.module'}
+  {path:'details', loadChildren:'./torre-details/torre-details.module'},
+  {
+    path: 'gestionpisos',
+    loadChildren: () => import('./gestionpisos/gestionpisos.module').then( m => m.GestionpisosPageModule)
+  },
+  {
+    path: 'gestionapartamento',
+    loadChildren: () => import('./gestionapartamento/gestionapartamento.module').then( m => m.GestionapartamentoPageModule)
+  }
 ];
 
 @NgModule({
