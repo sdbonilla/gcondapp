@@ -8,6 +8,7 @@ import { pisoI } from '../shared/pisos.interface';
   providedIn: 'root'
 })
 export class CrudpisosService {
+  
   private cruded: AngularFirestoreCollection<pisoI>;
   private pisos: Observable<pisoI[]>;
   constructor(db: AngularFirestore) {

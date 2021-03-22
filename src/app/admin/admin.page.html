@@ -4,7 +4,12 @@
     <ion-button type="submit" (click)="onLogout()"><ion-icon name="log-out"></ion-icon>logout</ion-button>
   </ion-toolbar>
 </ion-header>
-<!--*ngIf="user$ | async as user", => {{user.displayName}}-->
-<ion-content >
-<p>Bienvenido Usuario</p>
+
+<!--, => {{user.displayName}}-->
+<ion-content>
+<strong>Binvenido</strong>
+
+<ion-button routerLink="/tabs/tab2" expand="full" color="primary">Ir a mis Torres</ion-button>
+<ion-button routerLink="/tabs/tab2" expand="full" color="secondary">Reservas</ion-button>
+<ion-button routerLink="/reuniones" expand="full" color="tertiary">Reuniones</ion-button>
 </ion-content>

@@ -6,6 +6,7 @@
 
 
 <ion-content *ngIf="user$ | async as user">
+  {{user | json}}
   <ion-row>
     <ion-col>
       <h2>Gracias por tu registro!</h2>
@@ -16,11 +17,8 @@
 
   <ion-row>
     <ion-col>
-      <ion-button type="submit" color="primary" expand="block" (click)="onSendEmail()"
-        >Reenviar email de verificación</ion-button
-      >
+      <ion-button type="submit" color="primary" expand="block" (click)="onSendEmail()">Reenviar email de verificación</ion-button>
     </ion-col>
     <a routerLink="/tabs/tab1"><ion-button size="small" color="medium"><ion-icon slot="start" name="chevron-back-outline"></ion-icon></ion-button></a>
-
   </ion-row>
 </ion-content>

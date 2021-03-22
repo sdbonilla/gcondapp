@@ -10,6 +10,7 @@ import { switchMap } from "rxjs/operators";
   providedIn: 'root'
 })
 export class AuthService {
+  
   public user$:Observable<User>;
 
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {

@@ -37,7 +37,7 @@ const routes: Routes = [
     path: 'tdetails/:id',
     loadChildren: () => import('./torre-details/torre-details.module').then(m => m.TorreDetailsPageModule)
   },
-  { path: 'details', loadChildren: './torre-details/torre-details.module' },
+  { path: 'tdetails', loadChildren: './torre-details/torre-details.module' },
   {
     path: 'gestionpisos',
     loadChildren: () => import('./gestionpisos/gestionpisos.module').then(m => m.GestionpisosPageModule)
@@ -81,7 +81,24 @@ const routes: Routes = [
   {
     path: 'apdetails',
     loadChildren: () => import ('./aptodetails/aptodetails.module')
+  },
+  {
+    path: 'reuniones',
+    loadChildren: () => import('./reuniones/reuniones.module').then( m => m.ReunionesPageModule)
+  },
+  {
+    path: 'gestion-reunion',
+    loadChildren: () => import('./gestion-reunion/gestion-reunion.module').then( m => m.GestionReunionPageModule)
+  },
+  {
+    path: 'rdetails/:id',
+    loadChildren: () => import('./reunion-details/reunion-details.module').then( m => m.ReunionDetailsPageModule)
+  },
+  {
+    path: 'rdetails',
+    loadChildren: () => import('./reunion-details/reunion-details.module').then( m => m.ReunionDetailsPageModule)
   }
+
 ];
 
 @NgModule({

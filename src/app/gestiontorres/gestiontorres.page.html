@@ -14,25 +14,30 @@
 
     <ion-item>
       <ion-label>Torre</ion-label>
-      <ion-select placeholder="Select One">
-        <ion-select-option *ngFor="let torre of torres">Torre {{torre.ntorre}}</ion-select-option>
+      <ion-select placeholder="Select One" (ionChange)="onSelect($event.target.value)">
+        <ion-select-option *ngFor="let torre of torres" [value]="torre.codtorre">Torre {{torre.ntorre}}
+        </ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item>
+    {{pisos | json}}
+
+    <!--<ion-item>
       <ion-label>Pisos</ion-label>
       <ion-select placeholder="Select One">
-        <ion-select-option *ngFor="let piso of pisos">Piso {{piso.npiso}}</ion-select-option>
+        <ion-select-option *ngFor="let piso of pisos" [value]="piso.codtorreps">Piso {{piso.codtorreps}}</ion-select-option>
       </ion-select>   
     </ion-item>
 
     <ion-item>
       <ion-label>Apartamentos</ion-label>
       <ion-select placeholder="Select One">
-        <ion-select-option *ngFor="let apto of aptos">Piso {{apto.numapart}}</ion-select-option>
+        <ion-select-option *ngFor="let apto of aptos" [value]="apto.numapart">Piso {{apto.numapart}}</ion-select-option>
       </ion-select>
-    </ion-item>  
+    </ion-item> -->
 
   </ion-list>
+
+  <ion-button type="submit" color="primary" expand="block">Consultar</ion-button>
   <!--<ion-fab vertical="center" horizontal="end" edge slot="fixed">
     <ion-fab-button routerLink="/tdetails" routerDirection="forward" size="small">
       <ion-icon name="add"></ion-icon>
