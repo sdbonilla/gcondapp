@@ -12,7 +12,7 @@ import { reunI } from '../shared/reunion.interface';
 export class ReunionDetailsPage implements OnInit {
 
   reuni: reunI ={
-    id: '',
+    
     asunto: '',
     lugar: '',
     fecha: new Date()

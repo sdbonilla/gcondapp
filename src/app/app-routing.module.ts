@@ -97,6 +97,18 @@ const routes: Routes = [
   {
     path: 'rdetails',
     loadChildren: () => import('./reunion-details/reunion-details.module').then( m => m.ReunionDetailsPageModule)
+  },
+  {
+    path: 'reservas',
+    loadChildren: () => import('./reservas/reservas.module').then( m => m.ReservasPageModule)
+  },
+  {
+    path: 'reservas-details',
+    loadChildren: () => import('./reservas-details/reservas-details.module').then( m => m.ReservasDetailsPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   }
 
 ];

@@ -1,15 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>admin</ion-title>
-    <ion-button type="submit" (click)="onLogout()"><ion-icon name="log-out"></ion-icon>logout</ion-button>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="danger">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Dark Toolbar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <!--, => {{user.displayName}}-->
 <ion-content>
-<strong>Binvenido</strong>
-
-<ion-button routerLink="/tabs/tab2" expand="full" color="primary">Ir a mis Torres</ion-button>
-<ion-button routerLink="/tabs/tab2" expand="full" color="secondary">Reservas</ion-button>
-<ion-button routerLink="/reuniones" expand="full" color="tertiary">Reuniones</ion-button>
+  <h2 style="justify-content: center; display: flex;">Bienvenido</h2>
+  <ion-img  src="./assets/img/homelogo.png"></ion-img>
+<ion-button size="large" routerLink="/tabs/tab2" expand="full" color="primary">Ir a mis Torres</ion-button>
+<ion-button size="large" routerLink="/reservas" expand="full" color="secondary">Reservas</ion-button>
+<ion-button size="large" routerLink="/reuniones" expand="full" color="tertiary">Reuniones</ion-button>
 </ion-content>

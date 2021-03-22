@@ -25,5 +25,4 @@ export class VerifyEmailPage {
   ngOnDestroy(): void {
     this.authSvc.logout();
   }
-
 }
