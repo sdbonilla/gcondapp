@@ -8,6 +8,7 @@ import { GestionpisosPageRoutingModule } from './gestionpisos-routing.module';
 
 import { GestionpisosPage } from './gestionpisos.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,7 @@ import { GestionpisosPage } from './gestionpisos.page';
     IonicModule,
     GestionpisosPageRoutingModule
   ],
-  declarations: [GestionpisosPage]
+  declarations: [GestionpisosPage],
+  exports: [GestionpisosPage]
 })
 export class GestionpisosPageModule {}

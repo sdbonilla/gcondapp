@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudapartamentoService } from '../service/crudapartamento.service';
+import { apartI } from '../shared/apartamento.interface';
 
 @Component({
   selector: 'app-gestionapartamento',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionapartamentoPage implements OnInit {
 
-  constructor() { }
+  aptos: apartI[];
+
+  constructor(private aptosService: CrudapartamentoService) { }
 
   ngOnInit() {
+    this.aptosService.getAptos().subscribe(res=>this.aptos = res);
   }
 
 }

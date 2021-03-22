@@ -13,7 +13,9 @@ export class AdminPage implements OnInit {
 
   onLogout() {
     try {
-      this.authSvc.logout;
+      this.authSvc.logout();
+      this.router.navigate(['/tabs/tab1']);
+      
     } catch (error) {
       console.log('Error->', error);
     }
