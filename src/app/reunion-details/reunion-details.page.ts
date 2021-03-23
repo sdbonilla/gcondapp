@@ -34,7 +34,7 @@ export class ReunionDetailsPage implements OnInit {
     await loading.present();
 
     this.reuniService.getReunion(this.reunId).subscribe(todo => {
-      loading.dismiss();;
+      loading.dismiss();
       this.reuni = todo;
     });
   }

@@ -5,5 +5,26 @@
 </ion-header>
 
 <ion-content>
+  <ion-list lines="full">
+    <ion-item *ngIf="reserva">
+      <ion-input required type="text" placeholder="Asunto" [(ngModel)]="reserva.lugar"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="reserva">
+      <ion-input required type="text" placeholder="Lugar" [(ngModel)]="reserva.aptoreserva"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="reserva">
+      <ion-input required type="number" [(ngModel)]="reserva.priority"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="reserva">
+      <ion-input required type="date" [(ngModel)]="reserva.fecha"></ion-input>
+    </ion-item>
+  </ion-list>
 
+  
+  <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+      <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/" routerDirection="forward">
+          <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 </ion-content>

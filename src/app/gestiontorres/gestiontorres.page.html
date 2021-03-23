@@ -21,11 +21,12 @@
     </ion-item>
     {{pisos | json}}
 
-    <!--<ion-item>
+    <ion-item>
       <ion-label>Pisos</ion-label>
       <ion-select placeholder="Select One">
-        <ion-select-option *ngFor="let piso of pisos" [value]="piso.codtorreps">Piso {{piso.codtorreps}}</ion-select-option>
-      </ion-select>   
+        <ion-select-option *ngFor="let piso of pisos" [value]="piso.codtorreps">Piso {{piso.codtorreps}}
+        </ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
@@ -33,8 +34,7 @@
       <ion-select placeholder="Select One">
         <ion-select-option *ngFor="let apto of aptos" [value]="apto.numapart">Piso {{apto.numapart}}</ion-select-option>
       </ion-select>
-    </ion-item> -->
-
+    </ion-item>
   </ion-list>
 
   <ion-button type="submit" color="primary" expand="block">Consultar</ion-button>

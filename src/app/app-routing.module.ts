@@ -103,7 +103,11 @@ const routes: Routes = [
     loadChildren: () => import('./reservas/reservas.module').then( m => m.ReservasPageModule)
   },
   {
-    path: 'reservas-details',
+    path: 'resdetails/:id',
+    loadChildren: () => import('./reservas-details/reservas-details.module').then( m => m.ReservasDetailsPageModule)
+  },
+  {
+    path: 'resdetails',
     loadChildren: () => import('./reservas-details/reservas-details.module').then( m => m.ReservasDetailsPageModule)
   },
   {

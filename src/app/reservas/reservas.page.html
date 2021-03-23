@@ -3,13 +3,32 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/admin"></ion-back-button>
     </ion-buttons>
-    <ion-title>reservas</ion-title>
+    <ion-title>Reservas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <p>Salon de eventos</p>
+<ion-content>  
   <ion-button (click)="showModal()" expand="block" size="large">
     Ver reservas
   </ion-button>
+  <ion-list>
+    <ion-item-sliding *ngFor="let reser of reserv">
+      <ion-item line="inset" button [routerLink]="['/resdetails', reser.id]">
+        <ion-label>
+          <ion-icon name="business-outline"></ion-icon>
+          {{reser.lugar}}
+        </ion-label>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option (click)="onRemove(item)" color="secondary">
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/rdetails" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
