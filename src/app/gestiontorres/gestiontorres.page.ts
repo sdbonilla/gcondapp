@@ -5,14 +5,7 @@ import { pisoI } from '../shared/pisos.interface';
 import { apartI } from '../shared/apartamento.interface';
 import { CrudpisosService } from '../service/crudpisos.service';
 import { CrudapartamentoService } from '../service/crudapartamento.service';
-import { filter } from 'rxjs/operators';
 
-
-interface User {
-  id: number;
-  first: string;
-  last: string;
-}
 
 @Component({
   selector: 'app-gestiontorres',
@@ -20,59 +13,32 @@ interface User {
   styleUrls: ['./gestiontorres.page.scss'],
   providers: [CrudpisosService]
 })
-
-
-
 export class GestiontorresPage implements OnInit {
-  users: User[] = [
-    {
-      id: 1,
-      first: 'Alice',
-      last: 'Smith',
-    },
-    {
-      id: 2,
-      first: 'Bob',
-      last: 'Davis',
-    },
-    {
-      id: 3,
-      first: 'Charlie',
-      last: 'Rosenburg',
-    }
-  ];
 
-  compareWith(o1: User, o2: User | User[]) {
-    if (!o1 || !o2) {
-      return o1 === o2;
-    }
-
-    if (Array.isArray(o2)) {
-      return o2.some((u: User) => u.id === o1.id);
-    }
-
-    return o1.id === o2.id;
-  }
-  customPopoverOptions: any = {
-    header: 'Hair Color',
-    subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color'
-  };
-  SelectedTorre: EdificeI = { id: '', codtorre: '', ntorre: '' }; 
+  SelectedTorre: EdificeI = { id: '', codtorre: '', ntorre: '' };
+  SelectedPiso: pisoI = { id: '', codtorreps: '', npiso: '', codpisot: '' };
+  SelectedAptos: apartI = { id: '', codpiso: 0 , numapart: '', propietario: '', saldo: 0}; 
   torres: EdificeI[];
   pisos: pisoI[];
   aptos: apartI[];
-
+  pisoss = [];
+  apartos = [];
   constructor(private torresService: CrudedificeService, private pisosService: CrudpisosService, private aptosService: CrudapartamentoService) { }
 
   ngOnInit() {
-    this.torresService.getTorres().subscribe(res => this.torres = res);   
+    this.torresService.getTorres().subscribe(res => this.torres = res);
+    this.pisosService.getPisos().subscribe(res => this.pisos = res);
+    this.aptosService.getAptos().subscribe(res => this.aptos = res);
   }
 
-  onSelect(codtorre: string): void {
-    console.log("torre ->", codtorre);
+  getpisos(codtorre: string) {    
+    this.pisoss = this.pisos.filter(item => item.codtorreps === codtorre);
+    console.log("piso=>", this.pisoss);
+  }
 
-    
+  getaptos(codpios: number) {    
+    this.apartos = this.aptos.filter(item => item.codpiso === codpios);
+    console.log("apartamntos=>", this.apartos);
   }
 
 }

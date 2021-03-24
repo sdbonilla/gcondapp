@@ -3,4 +3,5 @@ export interface apartI{
     numapart: string;
     propietario: string;
     saldo: number;
+    codpiso: number;
 }
