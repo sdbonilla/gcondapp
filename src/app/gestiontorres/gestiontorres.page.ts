@@ -23,6 +23,8 @@ export class GestiontorresPage implements OnInit {
   aptos: apartI[];
   pisoss = [];
   apartos = [];
+  aptidselected = "";
+  aptinfo = [];
   constructor(private torresService: CrudedificeService, private pisosService: CrudpisosService, private aptosService: CrudapartamentoService) { }
 
   ngOnInit() {
@@ -38,7 +40,19 @@ export class GestiontorresPage implements OnInit {
 
   getaptos(codpios: number) {    
     this.apartos = this.aptos.filter(item => item.codpiso === codpios);
-    console.log("apartamntos=>", this.apartos);
+    
+  }
+
+  getinfoapartamento(){
+    this.aptinfo = this.aptos.filter(item => item.id === this.aptidselected);
+  
+  
+  }
+  
+  selectapt(id: string){
+    this.aptidselected = id;
+    console.log("aptidselected=>", this.aptidselected);
+    
   }
 
 }
