@@ -4,4 +4,5 @@ export interface apartI{
     propietario: string;
     saldo: number;
     codpiso: number;
+    aptcodpiso: string;
 }

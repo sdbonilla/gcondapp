@@ -79,7 +79,7 @@ const routes: Routes = [
     loadChildren: () => import('./aptodetails/aptodetails.module').then(m => m.AptodetailsPageModule)
   },
   {
-    path: 'apdetails',
+    path: 'aptodetails',
     loadChildren: () => import ('./aptodetails/aptodetails.module')
   },
   {

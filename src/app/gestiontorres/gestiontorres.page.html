@@ -25,29 +25,35 @@
       <ion-label>Pisos</ion-label>
       <ion-select placeholder="Select One" [(ngModel)]="SelectedPiso.codtorreps"
         (ionChange)="getaptos($event.target.value)">
-        <ion-select-option *ngFor="let piso of pisoss" [value]="piso.npiso">Piso {{piso.npiso}}
+        <ion-select-option *ngFor="let piso of pisoss" [value]="piso.pcodapart">Piso {{piso.npiso}}
         </ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label>Apartamentos</ion-label>
-      <ion-select placeholder="Select One" [(ngModel)]="SelectedAptos.codpiso" (ionChange)="selectapt($event.target.value)">
-        <ion-select-option *ngFor="let apto of apartos" [value]="apto.id">Piso {{apto.numapart}} 
+      <ion-select placeholder="Select One" [(ngModel)]="SelectedAptos.aptcodpiso" (ionChange)="selectapt($event.target.value)">
+        <ion-select-option *ngFor="let apto of apartos" [value]="apto.id">{{apto.numapart}} 
         </ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
 
   <ion-button type="submit" color="primary" expand="block" (click)="getinfoapartamento()">Consultar</ion-button>
-  <ion-item *ngIf="aptinfo">
-    <ion-card>
-      <ion-card-title>Datos del Apartamento</ion-card-title>
-      <ion-item *ngFor="let apt of aptinfo">
-        {{apt.propietario}}
-      </ion-item>
-    </ion-card>
-  </ion-item>
+
+    <ion-card *ngIf="aptinfo">
+      <ion-card-header>
+        <ion-card-subtitle>Mi Condominio</ion-card-subtitle>
+        <ion-card-title>Datos del Apartamento</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content *ngFor="let apt of aptinfo">
+        El Propietario es: {{apt.propietario}}, su apartamento es el {{apt.numapart}}
+        con una deuda actual de ${{apt.saldo}} de pesos<br>
+      </ion-card-content>
+      <ion-button expand="full" [routerLink]="['/aptodetails', aptinfo.id]">Editar</ion-button>
+    </ion-card>    
+  
   <!--<ion-fab vertical="center" horizontal="end" edge slot="fixed">
     <ion-fab-button routerLink="/tdetails" routerDirection="forward" size="small">
       <ion-icon name="add"></ion-icon>

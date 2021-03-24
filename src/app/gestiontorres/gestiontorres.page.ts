@@ -16,8 +16,8 @@ import { CrudapartamentoService } from '../service/crudapartamento.service';
 export class GestiontorresPage implements OnInit {
 
   SelectedTorre: EdificeI = { id: '', codtorre: '', ntorre: '' };
-  SelectedPiso: pisoI = { id: '', codtorreps: '', npiso: '', codpisot: '' };
-  SelectedAptos: apartI = { id: '', codpiso: 0 , numapart: '', propietario: '', saldo: 0}; 
+  SelectedPiso: pisoI = { id: '', codtorreps: '', npiso: '', pcodapart: '' };
+  SelectedAptos: apartI = { id: '', codpiso: 0 , numapart: '', propietario: '', saldo: 0, aptcodpiso: ''}; 
   torres: EdificeI[];
   pisos: pisoI[];
   aptos: apartI[];
@@ -38,21 +38,19 @@ export class GestiontorresPage implements OnInit {
     console.log("piso=>", this.pisoss);
   }
 
-  getaptos(codpios: number) {    
-    this.apartos = this.aptos.filter(item => item.codpiso === codpios);
+  getaptos(aptcodpiso: string) {    
+    this.apartos = this.aptos.filter(item => item.aptcodpiso === aptcodpiso);
     
   }
 
   getinfoapartamento(){
     this.aptinfo = this.aptos.filter(item => item.id === this.aptidselected);
-  
-  
+   
   }
   
   selectapt(id: string){
     this.aptidselected = id;
     console.log("aptidselected=>", this.aptidselected);
-    
   }
 
 }
