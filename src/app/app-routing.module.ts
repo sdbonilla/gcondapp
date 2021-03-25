@@ -55,10 +55,6 @@ const routes: Routes = [
     loadChildren: () => import('./piso-details/piso-details.module')
   },
   {
-    path: 'apto-details',
-    loadChildren: () => import('./apto-details/apto-details.module').then(m => m.AptoDetailsPageModule)
-  },
-  {
     path: 'pisos-torre1',
     loadChildren: () => import('./pisos-torre1/pisos-torre1.module').then(m => m.PisosTorre1PageModule)
   },

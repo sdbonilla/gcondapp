@@ -36,8 +36,8 @@ export class CrudapartamentoService {
   }
 
 
-  updateApto(torre:apartI, id:string){
-    return this.cruded.doc(id).update(torre);
+  updateApto(apto:apartI, id:string){
+    return this.cruded.doc(id).update(apto);
   }
 
   addApto(torre:apartI){

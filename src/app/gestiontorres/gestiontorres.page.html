@@ -1,14 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>gestiontorres</ion-title>
+    <ion-img  src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-header><br><br>
+    <ion-title>Gestión de torres</ion-title>
+  </ion-header>
   <ion-list>
     <ion-list-header>
       <ion-label>
-        Single Selection
+        Consulta información de tus apartamentos
       </ion-label>
     </ion-list-header>
 
@@ -43,15 +46,16 @@
 
     <ion-card *ngIf="aptinfo">
       <ion-card-header>
-        <ion-card-subtitle>Mi Condominio</ion-card-subtitle>
+        <ion-card-subtitle>Mi Conjunto</ion-card-subtitle>
         <ion-card-title>Datos del Apartamento</ion-card-title>
       </ion-card-header>
     
       <ion-card-content *ngFor="let apt of aptinfo">
         El Propietario es: {{apt.propietario}}, su apartamento es el {{apt.numapart}}
         con una deuda actual de ${{apt.saldo}} de pesos<br>
+        <ion-button expand="full" color="success" [routerLink]="['/aptodetails', apt.id]" >Pagar Administración</ion-button>
       </ion-card-content>
-      <ion-button expand="full" [routerLink]="['/aptodetails', aptinfo.id]">Editar</ion-button>
+      
     </ion-card>    
   
   <!--<ion-fab vertical="center" horizontal="end" edge slot="fixed">
