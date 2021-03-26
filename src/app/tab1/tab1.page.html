@@ -1,37 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-img  src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>
+    <ion-img src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <ion-card *ngFor="let reser of reserv">
     <ion-card-header>
-      <ion-card-subtitle>Conjunto Palma Grande</ion-card-subtitle>
-      <ion-card-title>Balance General</ion-card-title>
+      <ion-card-subtitle>Recordatorio</ion-card-subtitle>
+      <ion-card-title>Reservas</ion-card-title>
     </ion-card-header>
-  
+
     <ion-card-content>
-      Acontinuacion se detalla el balance general de el conjunto Palma Grande.
-    </ion-card-content>
-    <ion-card-content>
-      <ion-row>
-        <ion-col>
-          DEUDA
-        </ion-col>
-        <ion-col>
-          TOTAL: 
-        </ion-col>     
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          BALANCE
-        </ion-col>
-        <ion-col>
-          TOTAL:
-        </ion-col>
-      </ion-row>   
+      Tiene una reserva de {{reser.aptoreserva}} de el {{reser.lugar}} el dia {{reser.fecha}}
     </ion-card-content>
   </ion-card>
-    
+
 </ion-content>

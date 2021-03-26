@@ -1,12 +1,15 @@
 <ion-header>
-  
+  <ion-toolbar>
+    <ion-button (click)="onLogout()" routerLink="/">Logout</ion-button>
+    <ion-button slot="end" fill="outline" (click)="getinfouser()"> <ion-icon slot="icon-only" name="person-circle" ></ion-icon></ion-button>
+  </ion-toolbar>
 </ion-header>
 
 <!--, => {{user.displayName}}-->
-<ion-content>
-  <h2 style="justify-content: center; display: flex;">Bienvenido</h2>
-  <ion-img  src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>
-<ion-button size="large" routerLink="/tabs/tab2" expand="full" color="primary">Gestionar mis Torres</ion-button>
-<ion-button size="large" routerLink="/reservas" expand="full" color="secondary">Reservas</ion-button>
-<ion-button size="large" routerLink="/reuniones" expand="full" color="tertiary">Reuniones</ion-button>
+<ion-content >
+  <h2 style="justify-content: center; display: flex;" *ngIf="userLoged">Bienvenido</h2>
+  <ion-img src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>
+  <ion-button size="large" routerLink="/tabs/tab2" expand="full" color="primary">Gestionar mis Torres</ion-button>
+  <ion-button size="large" routerLink="/reservas" expand="full" color="secondary">Reservas</ion-button>
+  <ion-button size="large" routerLink="/reuniones" expand="full" color="tertiary">Reuniones</ion-button>
 </ion-content>

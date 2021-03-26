@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Zona de pagos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item *ngIf="apto">
+      <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario" disabled></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-input required type="text" placeholder="Apartamento" [(ngModel)]="apto.numapart" disabled></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo"></ion-input>
+    </ion-item>
+    
+  </ion-list>
+  
+  <ion-button expand="full" (click)="saveTodo()" color="success">Realizar pago</ion-button>
+  
+</ion-content>

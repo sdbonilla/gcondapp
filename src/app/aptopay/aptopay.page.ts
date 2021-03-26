@@ -5,11 +5,11 @@ import { CrudapartamentoService } from '../service/crudapartamento.service';
 import { apartI } from '../shared/apartamento.interface';
 
 @Component({
-  selector: 'app-aptodetails',
-  templateUrl: './aptodetails.page.html',
-  styleUrls: ['./aptodetails.page.scss'],
+  selector: 'app-aptopay',
+  templateUrl: './aptopay.page.html',
+  styleUrls: ['./aptopay.page.scss'],
 })
-export class AptodetailsPage implements OnInit {
+export class AptopayPage implements OnInit {
 
   apto: apartI ={
     
@@ -60,8 +60,8 @@ export class AptodetailsPage implements OnInit {
       });
     }
   }
-  async onRemoveTodo(idapto:string) {
-    this.aptoSvc.removeApto(idapto);
-  }
+  
 
 }
+
+
