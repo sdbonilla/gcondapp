@@ -16,10 +16,14 @@ export class AptopayPage implements OnInit {
     propietario: '',
     aptcodpiso: '',
     id: '',
+    iduser: 0,
     numapart: '',
     saldo: 0,
-    codpiso: 0
+    codpiso: 0,
+    pago: 0
   }
+
+
   aptoId= null;
   constructor(private route: ActivatedRoute, private nav: NavController, private aptoSvc: CrudapartamentoService, private loadingController: LoadingController) { }
 
@@ -47,8 +51,10 @@ export class AptopayPage implements OnInit {
       message: 'Saving....'
     });
     await loading.present();
- 
+    
+
     if (this.aptoId) {
+      this.apto.saldo = this.apto.saldo - this.apto.pago;
       this.aptoSvc.updateApto(this.apto, this.aptoId).then(() => {
         loading.dismiss();
         this.nav.navigateForward('/tabs/tab2');

@@ -13,11 +13,13 @@
       <ion-input required type="text" placeholder="Apartamento" [(ngModel)]="apto.numapart" disabled></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
-      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo"></ion-input>
+      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo" disabled></ion-input>
     </ion-item>
-    
+    <ion-item *ngIf="apto">
+      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.pago"></ion-input>
+    </ion-item>
   </ion-list>
   
   <ion-button expand="full" (click)="saveTodo()" color="success">Realizar pago</ion-button>
-  
+  <ion-button expand="full" Color="danger" routerLink="/tabs/tab2">Cancelar</ion-button>
 </ion-content>

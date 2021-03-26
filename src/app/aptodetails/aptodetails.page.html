@@ -7,10 +7,12 @@
 <ion-content>
   <ion-list lines="full">
     <ion-item *ngIf="apto">
-      <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario"></ion-input>
+      <ion-label position="floating">Propietario</ion-label>
+      <ion-input required type="text" placeholder="Propietario"  [(ngModel)]="apto.propietario"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
-      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo" disabled></ion-input>
+      <ion-label position="floating">Identificación</ion-label>
+      <ion-input required type="number" placeholder="0"  [(ngModel)]="apto.iduser"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo" disabled></ion-input>

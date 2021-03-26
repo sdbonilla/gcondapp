@@ -19,7 +19,7 @@ export class GestiontorresPage implements OnInit {
   private cruded: AngularFirestoreCollection<apartI>;
   SelectedTorre: EdificeI = { id: '', codtorre: '', ntorre: '' };
   SelectedPiso: pisoI = { id: '', codtorreps: '', npiso: '', pcodapart: '' };
-  SelectedAptos: apartI = { id: '', codpiso: 0, numapart: '', propietario: '', saldo: 0, aptcodpiso: '' };
+  SelectedAptos: apartI = { id: '', codpiso: 0, numapart: '', propietario: '', saldo: 0, aptcodpiso: '', iduser: 0, pago: 0};
   torres: EdificeI[];
   pisos: pisoI[];
   aptos: apartI[];
@@ -84,6 +84,7 @@ export class GestiontorresPage implements OnInit {
   getpisos(codtorre: string) {
     this.pisoss = this.pisos.filter(item => item.codtorreps === codtorre);
     console.log("piso=>", this.pisoss);
+    
   }
 
   getaptos(aptcodpiso: string) {
