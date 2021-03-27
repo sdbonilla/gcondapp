@@ -27,6 +27,9 @@
       <ion-input required type="number" placeholder="Identificacion" [(ngModel)]="apto.idusuario" required></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
+      <ion-input required type="tel" placeholder="Teléfono" [(ngModel)]="apto.teluser" required></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
       <ion-label>Ubicación del apartamento</ion-label>
       <ion-select [(ngModel)]="apto.aptcodpiso">
         <ion-select-option value="P1T1">Torre 1 en Piso 1</ion-select-option>
@@ -44,15 +47,18 @@
         <ion-select-option value="P1T4">Torre 4 en Piso 1</ion-select-option>
         <ion-select-option value="P2T4">Torre 4 en Piso 2</ion-select-option>
         <ion-select-option value="P3T4">Torre 4 en Piso 3</ion-select-option>
-        <ion-select-option value="P4T4">Torre 4 en Piso 4</ion-select-option>
-        
+        <ion-select-option value="P4T4">Torre 4 en Piso 4</ion-select-option>        
       </ion-select>
     </ion-item>
     <ion-item *ngIf="apto">
-      <ion-input required type="text" placeholder="Ej:A101-A201" [(ngModel)]="apto.numapart"></ion-input>
+      <ion-label>Estado</ion-label>
+      <ion-select [(ngModel)]="apto.estado">
+        <ion-select-option value="propia">Propia</ion-select-option>
+        <ion-select-option value="arrendo">Arrendo</ion-select-option>
+      </ion-select>
     </ion-item>
     <ion-item *ngIf="apto">
-      <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario"></ion-input>
+      <ion-input required type="date" placeholder="Fecha" [(ngModel)]="apto.finicio"></ion-input>
     </ion-item>
 
     <ion-item *ngIf="reuni">

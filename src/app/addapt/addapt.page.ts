@@ -58,12 +58,12 @@ export class AddaptPage implements OnInit {
     if (this.aptoId) {
       this.aptoSvc.updateApto(this.apto, this.aptoId).then(() => {
         loading.dismiss();
-        this.nav.navigateForward('/');
+        this.modalctrl.dismiss();
       });
     } else {
       this.aptoSvc.addApto(this.apto).then(() => {
         loading.dismiss();
-        this.nav.navigateForward('/');
+        this.modalctrl.dismiss();
       });
     }
   }
