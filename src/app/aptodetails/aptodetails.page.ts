@@ -19,7 +19,12 @@ export class AptodetailsPage implements OnInit {
     iduser: 0,
     numapart: '',
     saldo: 0,
-    codpiso: 0, pago: 0
+    codpiso: 0, 
+    pago: 0,
+    estado: '',
+    teluser: 0,
+    finicio: new Date,
+    tipodocuser: ''
   }
   aptoId= null;
   constructor(private route: ActivatedRoute, private nav: NavController, private aptoSvc: CrudapartamentoService, private loadingController: LoadingController) { }

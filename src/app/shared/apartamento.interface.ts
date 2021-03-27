@@ -7,4 +7,8 @@ export interface apartI{
     codpiso: number;
     aptcodpiso: string;
     pago: number;
+    estado: string;
+    teluser: number;
+    finicio: Date;
+    tipodocuser: string;
 }

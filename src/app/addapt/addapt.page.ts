@@ -1,43 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingController, NavController } from '@ionic/angular';
+import { LoadingController, ModalController, NavController } from '@ionic/angular';
 import { CrudapartamentoService } from '../service/crudapartamento.service';
 import { apartI } from '../shared/apartamento.interface';
 
-@Component({
-  selector: 'app-aptopay',
-  templateUrl: './aptopay.page.html',
-  styleUrls: ['./aptopay.page.scss'],
-})
-export class AptopayPage implements OnInit {
 
-  apto: apartI ={    
-    propietario: '',
-    aptcodpiso: '',
+@Component({
+  selector: 'app-addapt',
+  templateUrl: './addapt.page.html',
+  styleUrls: ['./addapt.page.scss'],
+})
+export class AddaptPage implements OnInit {
+  apto: apartI ={
     id: '',
     iduser: 0,
     numapart: '',
+    propietario: '',
     saldo: 0,
     codpiso: 0,
+    aptcodpiso: '',
     pago: 0,
     estado: '',
     teluser: 0,
-    finicio: new Date(),
+    finicio: new Date,
     tipodocuser: ''
   }
-
-
-  aptoId= null;
-  constructor(private route: ActivatedRoute, private nav: NavController, private aptoSvc: CrudapartamentoService, private loadingController: LoadingController) { }
+  aptoId = null;
+  async close(){
+    await this.modalctrl.dismiss();
+  }
+  constructor(private modalctrl: ModalController, private aptoSvc: CrudapartamentoService, private route: ActivatedRoute, private nav: NavController, private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.aptoId = this.route.snapshot.params['id'];
-    if (this.aptoId){
-      this.loadTodo();
+    if (this.aptoId) {
+      this.loadAptoData();
     }
   }
-
-  async loadTodo(){
+  async loadAptoData(){
     const loading = await this.loadingController.create({
       message: 'Loading....'
     });
@@ -54,13 +54,11 @@ export class AptopayPage implements OnInit {
       message: 'Saving....'
     });
     await loading.present();
-    
 
     if (this.aptoId) {
-      this.apto.saldo = this.apto.saldo - this.apto.pago;
       this.aptoSvc.updateApto(this.apto, this.aptoId).then(() => {
         loading.dismiss();
-        this.nav.navigateForward('/tabs/tab2');
+        this.nav.navigateForward('/');
       });
     } else {
       this.aptoSvc.addApto(this.apto).then(() => {
@@ -69,8 +67,8 @@ export class AptopayPage implements OnInit {
       });
     }
   }
-  
+  async onRemoveTodo(idTodo: string) {
+    this.aptoSvc.removeApto(idTodo);
+  }
 
 }
-
-

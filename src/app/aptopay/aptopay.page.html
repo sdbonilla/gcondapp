@@ -14,6 +14,9 @@
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo" disabled></ion-input>
+    </ion-item>    
+    <ion-item *ngIf="apto">
+      <ion-input required type="date" placeholder="0" [(ngModel)]="apto.finicio"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-input required type="number" placeholder="0" [(ngModel)]="apto.pago"></ion-input>

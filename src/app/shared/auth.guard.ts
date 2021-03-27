@@ -18,6 +18,7 @@ export class AuthGuard implements CanActivate {
       take(1),
       map(user => {
         if (user){
+          console.log("usuario=>>",user);          
           return true;
         }else{
           //redirect to login

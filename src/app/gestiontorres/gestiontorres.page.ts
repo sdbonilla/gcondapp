@@ -19,7 +19,7 @@ export class GestiontorresPage implements OnInit {
   private cruded: AngularFirestoreCollection<apartI>;
   SelectedTorre: EdificeI = { id: '', codtorre: '', ntorre: '' };
   SelectedPiso: pisoI = { id: '', codtorreps: '', npiso: '', pcodapart: '' };
-  SelectedAptos: apartI = { id: '', codpiso: 0, numapart: '', propietario: '', saldo: 0, aptcodpiso: '', iduser: 0, pago: 0};
+  SelectedAptos: apartI = { id: '', tipodocuser: '', estado:'', finicio: new Date, codpiso: 0, numapart: '', propietario: '', saldo: 0, aptcodpiso: '', iduser: 0, pago: 0, teluser: 0};
   torres: EdificeI[];
   pisos: pisoI[];
   aptos: apartI[];

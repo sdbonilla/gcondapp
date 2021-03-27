@@ -117,6 +117,14 @@ const routes: Routes = [
   {
     path: 'aptopay',
     loadChildren: () => import('./aptopay/aptopay.module').then( m => m.AptopayPageModule)
+  },
+  {
+    path: 'userdetails',
+    loadChildren: () => import('./userdetails/userdetails.module').then( m => m.UserdetailsPageModule)
+  },
+  {
+    path: 'addapt',
+    loadChildren: () => import('./addapt/addapt.module').then( m => m.AddaptPageModule)
   }
 
 ];

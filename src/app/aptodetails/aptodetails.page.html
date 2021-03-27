@@ -8,24 +8,38 @@
   <ion-list lines="full">
     <ion-item *ngIf="apto">
       <ion-label position="floating">Propietario</ion-label>
-      <ion-input required type="text" placeholder="Propietario"  [(ngModel)]="apto.propietario"></ion-input>
+      <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label position="floating">Identificación</ion-label>
-      <ion-input required type="number" placeholder="0"  [(ngModel)]="apto.iduser"></ion-input>
+      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.iduser"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
+      <ion-label position="floating">Fecha de pago Admin</ion-label>
+      <ion-input required type="date" placeholder="0" [(ngModel)]="apto.finicio" disabled></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input required type="tel" placeholder="0" [(ngModel)]="apto.teluser"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-label position="floating">Deuda actual</ion-label>
       <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo" disabled></ion-input>
     </ion-item>
-    <ion-item *ngIf="reserva">
-      <ion-input required type="date" [(ngModel)]="reserva.fecha"></ion-input>
+
+    <ion-item *ngIf="apto">
+      <ion-label>Estado</ion-label>
+      <ion-select [(ngModel)]="apto.estado">
+        <ion-select-option value="propia">Propia</ion-select-option>
+        <ion-select-option value="arrendo">Arrendo</ion-select-option>
+      </ion-select>
     </ion-item>
   </ion-list>
-  
+
   <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
-      <ion-fab-button color="danger" (click)="onRemoveTodo(aptoId)" routerLink="/" routerDirection="forward">
-          <ion-icon name="trash"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+    <ion-fab-button color="danger" (click)="onRemoveTodo(aptoId)" routerLink="/" routerDirection="forward">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

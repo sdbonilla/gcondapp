@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { map, take } from 'rxjs/operators';
+import { AddaptPage } from '../addapt/addapt.page';
 import { AuthService } from '../service/auth.service';
 import { User } from '../shared/user.interface';
 
@@ -11,7 +14,10 @@ import { User } from '../shared/user.interface';
 export class AdminPage implements OnInit {
 
   userLoged:User;
-  constructor(private authSvc: AuthService, private router: Router) { }
+  constructor(private authSvc: AuthService, private router: Router, private modalctrl: ModalController,) { 
+    console.log("usuarioadmin=>",this.authSvc.user$);
+    
+  }
 
   onLogout() {
     try {
@@ -22,12 +28,16 @@ export class AdminPage implements OnInit {
       console.log('Error->', error);
     }
   }
-  getinfouser(){
-    console.log("Usuario=>", );
-    
+  async showModal(){
+    const modal = await this.modalctrl.create({
+      component: AddaptPage
+    })
+    await modal.present();
   }
+  
+
   ngOnInit() {
-    console.log("USER=>>", );
+   
   }
 
 }

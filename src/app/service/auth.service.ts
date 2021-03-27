@@ -26,6 +26,7 @@ export class AuthService {
     );
   }
   
+  
    async sendVerifcationEmail(): Promise<void> {
     try {
       return (await this.afAuth.currentUser).sendEmailVerification();
@@ -87,7 +88,7 @@ export class AuthService {
     }
   }
 
-  private updateUserdata(user:User){
+  public updateUserdata(user:User){
     const userRef:AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
     const data:User = { 
       uid:user.uid,
@@ -95,10 +96,11 @@ export class AuthService {
       emailVerified: user.emailVerified,
       displayName: user.displayName,
     };
-
     return userRef.set(data, {merge: true});
   }
   isEmailVerified(user: User): boolean {
     return user.emailVerified === true ? true : false;
   }
+
+  
 }

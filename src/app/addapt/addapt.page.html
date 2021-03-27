@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+    <ion-title>Añadiendo...</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item *ngIf="apto">
+      <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-label>Tipo de identificación</ion-label>
+      <ion-select [(ngModel)]="apto.tipodocuser">
+        <ion-select-option value="CC">Cédula de ciudadania</ion-select-option>
+        <ion-select-option value="CE">Cédula de extranjería</ion-select-option>
+        <ion-select-option value="NIT">NIT</ion-select-option>
+        <ion-select-option value="Passap">Pasaporte</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-input required type="number" placeholder="Identificacion" [(ngModel)]="apto.idusuario" required></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-label>Ubicación del apartamento</ion-label>
+      <ion-select [(ngModel)]="apto.aptcodpiso">
+        <ion-select-option value="P1T1">Torre 1 en Piso 1</ion-select-option>
+        <ion-select-option value="P2T1">Torre 1 en Piso 2</ion-select-option>
+        <ion-select-option value="P3T1">Torre 1 en Piso 3</ion-select-option>
+        <ion-select-option value="P4T1">Torre 1 en Piso 4</ion-select-option>
+        <ion-select-option value="P1T2">Torre 2 en Piso 1</ion-select-option>
+        <ion-select-option value="P2T2">Torre 2 en Piso 2</ion-select-option>
+        <ion-select-option value="P3T2">Torre 2 en Piso 3</ion-select-option>
+        <ion-select-option value="P4T2">Torre 2 en Piso 4</ion-select-option>
+        <ion-select-option value="P1T3">Torre 3 en Piso 1</ion-select-option>
+        <ion-select-option value="P2T3">Torre 3 en Piso 2</ion-select-option>
+        <ion-select-option value="P3T3">Torre 3 en Piso 3</ion-select-option>
+        <ion-select-option value="P4T3">Torre 3 en Piso 4</ion-select-option>
+        <ion-select-option value="P1T4">Torre 4 en Piso 1</ion-select-option>
+        <ion-select-option value="P2T4">Torre 4 en Piso 2</ion-select-option>
+        <ion-select-option value="P3T4">Torre 4 en Piso 3</ion-select-option>
+        <ion-select-option value="P4T4">Torre 4 en Piso 4</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-input required type="text" placeholder="Ej:A101-A201" [(ngModel)]="apto.numapart"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="reuni">
+      <ion-input required type="text" placeholder="Lugar" [(ngModel)]="reuni.lugar"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="reuni">
+      <ion-input required type="date" [(ngModel)]="reuni.fecha"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+      <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/" routerDirection="forward">
+          <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
