@@ -9,6 +9,7 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { Tab3Page } from './tab3.page';
 import { AdminPageModule } from '../admin/admin.module';
 import { LoginPageModule } from '../login/login.module';
+import { ProfilePageModule } from '../profile/profile.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { LoginPageModule } from '../login/login.module';
     IonicModule,
     Tab3PageRoutingModule,
     LoginPageModule,
-    AdminPageModule
+    AdminPageModule,
+    ProfilePageModule
   ],
   declarations: [Tab3Page]
 })

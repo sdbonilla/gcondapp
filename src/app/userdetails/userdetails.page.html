@@ -5,5 +5,22 @@
 </ion-header>
 
 <ion-content>
+  <ion-list lines="full">
+    <ion-item *ngIf="datauser">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input required type="text" placeholder="Usuario" [(ngModel)]="datauser.displayName"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="datauser">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input required type="email" placeholder="Lugar" [(ngModel)]="datauser.email" disabled></ion-input>
+    </ion-item>
+    <ion-item *ngIf="reserva">    
+      <ion-input required type="number" [(ngModel)]="reserva.priority"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="reserva">
+      <ion-input required type="date" [(ngModel)]="reserva.fecha"></ion-input>
+    </ion-item>
 
-</ion-content>
+    <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+    <ion-button expand="full" color="danger" routerLink="/tabs/tab3">Cancelar</ion-button>
+  </ion-list>

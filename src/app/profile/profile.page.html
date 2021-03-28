@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="duser$ | async as usser">
+  <ion-item>
+    <ion-icon size="large" name="person-circle-outline"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      {{usser.displayName}}
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      {{usser.email}}
+    </ion-label>
+  </ion-item>
+  
+  <ion-button color="warning" expand="full" [routerLink]="['/userdetails', usser.uid]">Editar</ion-button>
+  <ion-button (click)="onLogout()" routerLink="/" expand="full"><ion-icon name="log-out-outline"></ion-icon>Logout</ion-button>
+</ion-content>
