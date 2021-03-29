@@ -133,6 +133,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'carousel',
+    loadChildren: () => import('./components/carousel/carousel.module').then( m => m.CarouselPageModule)
   }
 
 ];

@@ -39,7 +39,7 @@ export class LoginPage {
 
   private redirectUser(isVerified: boolean): void {
     if (isVerified) {
-      this.router.navigate(['tabs/tab3']);
+      this.router.navigate(['tabs/tab2']);
     } else {
       this.router.navigate(['verify-email']);
     }

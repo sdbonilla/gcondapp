@@ -9,8 +9,9 @@
   <h2 style="justify-content: center; display: flex;" *ngIf="userLoged">Bienvenido</h2>
   <ion-img src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>
   <ion-button size="large" routerLink="/gestiontorres" expand="full" color="primary"><ion-icon name="podium-outline"></ion-icon>Gestionar mis Torres</ion-button>
-  <ion-button size="large" routerLink="/reservas" expand="full" color="secondary"><ion-icon name="notifications-outline"></ion-icon>Reservas</ion-button>
-  <ion-button size="large" routerLink="/reuniones" expand="full" color="tertiary"><ion-icon name="file-tray-full-outline"></ion-icon>Reuniones</ion-button>
-  <ion-button size="large" expand="full" color="tertiary" (click)="showModal()"><ion-icon name="add-circle-outline"></ion-icon>Añadir apartamentos</ion-button>
+  <ion-button size="large" expand="full" color="primary" (click)="showModal()"><ion-icon name="add-circle-outline"></ion-icon>Añadir apartamentos</ion-button>
   <ion-button size="large" routerLink="/gestiontorres" expand="full" color="primary"><ion-icon name="create-outline"></ion-icon>Editar apartamentos</ion-button>
+  <ion-button size="large" routerLink="/reuniones" expand="full" color="tertiary"><ion-icon name="file-tray-full-outline"></ion-icon>Reuniones</ion-button>
+  <ion-button size="large" routerLink="/reservas" expand="full" color="secondary"><ion-icon name="notifications-outline"></ion-icon>Reservas</ion-button>  
+  
 </ion-content>

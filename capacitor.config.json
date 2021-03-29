@@ -1,0 +1,13 @@
+{
+  "appId": "com.gcond.app",
+  "appName": "gcond",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

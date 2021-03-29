@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-img  src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>    
+    <ion-img src="./assets/img/logo-Palma-Grande-01.jpg"></ion-img>
   </ion-toolbar>
 </ion-header>
 
@@ -35,8 +35,9 @@
 
     <ion-item>
       <ion-label>Apartamentos</ion-label>
-      <ion-select placeholder="Select One" [(ngModel)]="SelectedAptos.aptcodpiso" (ionChange)="selectapt($event.target.value)">
-        <ion-select-option *ngFor="let apto of apartos" [value]="apto.id">{{apto.numapart}} 
+      <ion-select placeholder="Select One" [(ngModel)]="SelectedAptos.aptcodpiso"
+        (ionChange)="selectapt($event.target.value)">
+        <ion-select-option *ngFor="let apto of apartos" [value]="apto.id">{{apto.numapart}}
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -44,22 +45,35 @@
 
   <ion-button type="submit" color="primary" expand="block" (click)="getinfoapartamento()">Consultar</ion-button>
 
-    <ion-card *ngIf="aptinfo">
-      <ion-card-header>
-        <ion-card-subtitle>Mi Conjunto</ion-card-subtitle>
-        <ion-card-title>Datos del Apartamento</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content *ngFor="let apt of aptinfo">
-        El Propietario es: {{apt.propietario}}, su apartamento es el {{apt.numapart}}
-        con una deuda actual de ${{apt.saldo}} de pesos, su estado acual es {{apt.estado}}<br>
-        <!--<ion-button (click)="presentActionSheet()" expand="block" color="secondary">Gestionar apartamento</ion-button>-->
-        <ion-button expand="full" color="success" [routerLink]="['/aptopay', apt.id]" >Pagar Administración</ion-button>
-        <ion-button expand="full" color="tertiary" [routerLink]="['/aptodetails', apt.id]" >Gestionar apartamento</ion-button>
-      </ion-card-content>
+  <ion-card *ngIf="aptinfo">
+    <ion-card-header>
+      <ion-card-subtitle>Mi Conjunto</ion-card-subtitle>
+      <ion-card-title>Datos del Apartamento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngFor="let apt of aptinfo">
+      <ion-list>
+        <ion-item>
+          <ion-label>Propietario: {{apt.propietario}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apartamento número: {{apt.numapart}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Deuda total: ${{apt.saldo}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Estado: {{apt.estado}}</ion-label>
+        </ion-item>
+      </ion-list>
+      <!--<ion-button (click)="presentActionSheet()" expand="block" color="secondary">Gestionar apartamento</ion-button>-->
+      <ion-button expand="full" color="tertiary" [routerLink]="['/aptodetails', apt.id]">Gestionar apartamento
+      </ion-button>
+      <ion-button expand="full" color="success" [routerLink]="['/aptopay', apt.id]">Pagar Administración</ion-button>
       
-    </ion-card>    
-  
+    </ion-card-content>
+
+  </ion-card>
+
   <!--<ion-fab vertical="center" horizontal="end" edge slot="fixed">
     <ion-fab-button routerLink="/tdetails" routerDirection="forward" size="small">
       <ion-icon name="add"></ion-icon>

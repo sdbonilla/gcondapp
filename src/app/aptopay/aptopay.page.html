@@ -7,18 +7,23 @@
 <ion-content>
   <ion-list lines="full">
     <ion-item *ngIf="apto">
+      <ion-label position="floating">Propietario</ion-label>
       <ion-input required type="text" placeholder="Propietario" [(ngModel)]="apto.propietario" disabled></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
+      <ion-label position="floating">Numero de apartamento</ion-label>
       <ion-input required type="text" placeholder="Apartamento" [(ngModel)]="apto.numapart" disabled></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
+      <ion-label position="floating">Deuda Actual</ion-label>
       <ion-input required type="number" placeholder="0" [(ngModel)]="apto.saldo" disabled></ion-input>
     </ion-item>    
     <ion-item *ngIf="apto">
+      <ion-label position="floating">Fecha de pago</ion-label>
       <ion-input required type="date" placeholder="0" [(ngModel)]="apto.finicio"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
+      <ion-label position="floating">Valor a pagar</ion-label>
       <ion-input required type="number" placeholder="0" [(ngModel)]="apto.pago"></ion-input>
     </ion-item>
   </ion-list>

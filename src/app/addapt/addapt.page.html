@@ -24,10 +24,12 @@
       </ion-select>
     </ion-item>
     <ion-item *ngIf="apto">
-      <ion-input required type="number" placeholder="Identificacion" [(ngModel)]="apto.idusuario" required></ion-input>
+      <ion-label position="floating">Identificación</ion-label>
+      <ion-input required type="number" placeholder="109887553" [(ngModel)]="apto.idusuario" required></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
-      <ion-input required type="tel" placeholder="Teléfono" [(ngModel)]="apto.teluser" required></ion-input>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input type="tel" placeholder="+57 (31012357890)" [(ngModel)]="apto.teluser" required></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label>Ubicación del apartamento</ion-label>
@@ -49,6 +51,10 @@
         <ion-select-option value="P3T4">Torre 4 en Piso 3</ion-select-option>
         <ion-select-option value="P4T4">Torre 4 en Piso 4</ion-select-option>        
       </ion-select>
+    </ion-item>
+    <ion-item *ngIf="apto">
+      <ion-label position="floating">Numero de apartamento</ion-label>
+      <ion-input type="tetx" placeholder="B102(piso2)-A1050(piso1)" [(ngModel)]="apto.numapart" required></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label>Estado</ion-label>

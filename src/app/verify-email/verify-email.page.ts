@@ -21,6 +21,7 @@ export class VerifyEmailPage {
       console.log('Error->', error);
     }
   }
+  
 
   ngOnDestroy(): void {
     this.authSvc.logout();

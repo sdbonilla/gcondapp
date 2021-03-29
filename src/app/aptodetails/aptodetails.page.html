@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>reservas-details</ion-title>
+    <ion-title>Datos del apartamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,15 +12,15 @@
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label position="floating">Identificación</ion-label>
-      <ion-input required type="number" placeholder="0" [(ngModel)]="apto.iduser"></ion-input>
+      <ion-input required type="number" placeholder="123733" [(ngModel)]="apto.iduser"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label position="floating">Fecha de pago Admin</ion-label>
-      <ion-input required type="date" placeholder="0" [(ngModel)]="apto.finicio" disabled></ion-input>
+      <ion-input required type="date" placeholder="10/20/20" [(ngModel)]="apto.finicio" disabled></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input required type="tel" placeholder="0" [(ngModel)]="apto.teluser"></ion-input>
+      <ion-input required type="tel" placeholder="+57 (310123578)" [(ngModel)]="apto.teluser"></ion-input>
     </ion-item>
     <ion-item *ngIf="apto">
       <ion-label position="floating">Deuda actual</ion-label>
